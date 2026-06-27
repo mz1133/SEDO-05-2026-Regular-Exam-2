@@ -29,7 +29,7 @@ pipeline{
                     branch 'main'
                 }
             }
-            stages{
+            stage{
                 bat 'dotnet test'
             }
         }
