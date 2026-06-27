@@ -10,7 +10,7 @@ pipeline{
                     branch 'main'
                 }
             }
-            streps{
+            steps{
                 bat 'dotnet restore'
             }
         }stage('Build'){
@@ -19,7 +19,7 @@ pipeline{
                     branch 'main'
                 }
             }
-            streps{
+            steps{
                 bat 'dotnet build'
             }
 
@@ -29,7 +29,7 @@ pipeline{
                     branch 'main'
                 }
             }
-            stage{
+            steps{
                 bat 'dotnet test'
             }
         }
