@@ -1,6 +1,6 @@
 pipeline{
 
-     agen any
+     agent any
 
      stages{
 
@@ -10,26 +10,28 @@ pipeline{
                     branch 'main'
                 }
             }
-            streps{
+            steps{
                 bat 'dotnet restore'
             }
-        }stage('Build'){
+        }
+        stage('Build'){
             when{
                 anyOf{
                     branch 'main'
                 }
             }
-            streps{
+            steps{
                 bat 'dotnet build'
             }
 
-        }stage('Test'){
+        }
+        stage('Test'){
             when{
                 anyOf{
                     branch 'main'
                 }
             }
-            stages{
+            steps{
                 bat 'dotnet test'
             }
         }
