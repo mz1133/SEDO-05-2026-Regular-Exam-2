@@ -13,7 +13,8 @@ pipeline{
             steps{
                 bat 'dotnet restore'
             }
-        }stage('Build'){
+        }
+        stage('Build'){
             when{
                 anyOf{
                     branch 'main'
@@ -23,7 +24,8 @@ pipeline{
                 bat 'dotnet build'
             }
 
-        }stage('Test'){
+        }
+        stage('Test'){
             when{
                 anyOf{
                     branch 'main'
